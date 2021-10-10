@@ -1,0 +1,218 @@
+
+$large: 1100px;
+$ex-medium: 900px;
+$medium: 768px;
+$small: 550px;
+$extraSmall: 450px;
+
+
+$color-band: #75efff;
+$color-bg: #101c31;
+$color-font: #fff;
+$color-border: #ccc;
+
+
+.section{
+    padding: clamp(20px, 7vw, 100px) clamp(20px, 7vw , 100px);
+
+    .h2{
+        font-size: clamp(22px, 6vw, 30px);
+        font-weight: 400;
+        margin-bottom: 5px;
+        line-height: 100%;
+        text-align: center;
+    }
+}
+
+.cartlist-contaier{
+    .heading{
+        display: block;
+        text-align: center;
+        margin-bottom: clamp(20px, 4vw, 40px);
+        font-size: clamp(30px, 7vw, 35px);
+        font-weight: 400;
+        color: $color-bg;
+    }
+
+    .cardList-heading{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: clamp(10px, 3vw, 30px) clamp(10px, 3vw , 30px);
+        background-color: rgba($color: #000000, $alpha: 0.1);
+        margin-bottom: clamp(10px,3vw, 30px);
+
+        @media (max-width: $medium) {
+            flex-direction: column;
+        }
+
+        .filter{
+            width: 200px;
+            @media (max-width: $medium) {
+                order: 2;
+            }
+        }
+        .card-search{
+            width: 200px;
+            @media (max-width: $medium) {
+                order: 1;
+                margin-bottom: clamp(10px, 3vw , 30px);
+            }
+            form{
+                border-radius: 5px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                overflow: hidden;
+                border: 1px solid #ccc;;
+                height: 35px;
+                input{
+                    flex: 5;
+                    width: 100%;
+                    border: none;
+                    background-color: #fff;
+                    font-size: 16px;
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 0 10px;
+                    color: rgb(131, 131, 131);
+                    &:focus{
+                        outline: none;
+                    }
+                }
+    
+                button{
+                    flex: 1;
+                    border: none;
+                    font-size: 16px;
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: rgb(0, 132, 255);
+                    &:focus{
+                        outline: none;
+                    }
+                }
+            }
+        }
+    }
+}
+.cartList{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: clamp(30px, 3vw, 10px);
+
+    @media (max-width: $medium) {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @media (max-width: $small) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @media (max-width: $extraSmall) {
+        grid-template-columns: 1fr;
+    }
+
+    .card{
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        display: flex;
+        flex-direction: column;
+        transition: all 0.3s ease-in-out;
+
+        &:hover{
+            -webkit-box-shadow: 0px 5px 6px 0px rgba(0,0,0,0.49); 
+            box-shadow: 0px 5px 6px 0px rgba(0,0,0,0.49);
+        }
+        .img-container{
+            position: relative;
+            padding-top: 150px;
+            overflow: hidden;
+            margin: clamp(20px, 3vw, 10px);
+            cursor: pointer;
+            img{
+                position: absolute;
+                object-fit: contain;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+            }
+        }
+
+        .content{
+            background-color: rgba($color: #000000, $alpha: 0.1);
+            display: block;
+            padding: clamp(20px, 3vw, 10px);
+            flex: 1;
+
+            .flight-status{
+                margin-bottom: 5px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                span{
+                    color: #5f5e5e;
+                }
+
+                .success-btn{
+                    width: 70px;
+                    height: 20px;
+                    border-radius: 5px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: #fff;
+                    &.success{
+                        background-color: rgb(36, 161, 36);
+                    }
+
+                    &.failed{
+                        background-color: rgb(243, 21, 21);
+                    }
+                }
+            }
+
+            .date{
+                color: rgb(158, 158, 158);
+                margin-bottom: 5px;
+                display: block;
+            }
+
+            h2{
+                font-size: clamp(18px, 4vw, 20px);
+                font-weight: 400;
+                margin-bottom: 5px;
+                line-height: 100%;
+            }
+
+            p{
+                display: block;
+                margin-bottom: 10px;
+            }
+
+            .btn{
+                width: 80px;
+                height: 30px;
+                display: flex;
+                text-decoration: none;
+                align-items: center;
+                justify-content: center;
+                font-size: 17px;
+                background-color: $color-bg;
+                color: $color-font;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                &:focus{
+                    outline: none;
+                }
+            }
+        }
+    }
+}

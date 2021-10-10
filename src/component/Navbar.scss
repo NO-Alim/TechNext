@@ -1,0 +1,26 @@
+$color-band: #75efff;
+$color-bg: #101c31;
+$color-font: #fff;
+$color-border: #ccc;
+
+nav{
+    padding: 10px clamp(10px, 3vw , 50px);
+    background-color: rgba($color: #000000, $alpha: 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    a{
+        text-decoration: none;
+        font-size: clamp(30px, 7vw, 35px);
+        line-height: 100%;
+        color: $color-bg;
+        font-weight: 500;
+        display: inline-block;
+
+        span{
+            color: rgb(0, 132, 255);
+            line-height: 100%;
+        }
+    }
+}
